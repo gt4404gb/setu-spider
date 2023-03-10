@@ -109,4 +109,4 @@ IMAGES_URLS_FIELD ="image_urls"
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-LOG_LEVEL = 'DEBUG'
+LOG_LEVEL = 'ERROR'

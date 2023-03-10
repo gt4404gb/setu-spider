@@ -12,7 +12,7 @@ class SetuSpider(CrawlSpider):
      #搜索的域名范围，也就是爬虫的约束区域，规定爬虫只爬取这个域名下的网页
     allowed_domains = ["m4ex.com","m4ex.net"]
     #开始页面
-    start_urls = ['http://m4ex.com/fantasy/devil/succubus_devil50']
+    start_urls = ['http://m4ex.com/fantasy/devil']
     #print(start_urls)
 
     # 设置爬虫的请求头，防止爬取失败
