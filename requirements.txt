@@ -1,0 +1,4 @@
+lxml
+scrapy
+scrapy_splash
+Pillow
