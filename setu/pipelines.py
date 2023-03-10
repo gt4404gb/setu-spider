@@ -26,6 +26,7 @@ class SetuPipeline(ImagesPipeline):
         item = request.meta['item']  # 通过上面的meta传递过来item
         #定义图片名，request.url.split('/')[-1].split('.')[-1]是截取最后出现的文件格式
         image_name = item['title'] + str(i) +"." + request.url.split('/')[-1].split('.')[-1]
+        print("标题："+item['title'])
         print(item['title'] + str(i) +"." + request.url.split('/')[-1].split('.')[-1])
         #下载，item['tag']是文件夹路径，image_name是文件名
         down_file_name = u'/{0}/{1}'.format(item['tag'], image_name)
