@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = 'setu.spiders'
 #USER_AGENT = 'setu (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-SPLASH_URL = 'http://192.168.3.100:8050'
+#SPLASH_URL = 'http://127.0.0.1:8050'
 DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashCookiesMiddleware': 723,
     'scrapy_splash.SplashMiddleware': 725,
@@ -30,7 +30,7 @@ DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
  #Robot协议属性为False，流氓一点
 ROBOTSTXT_OBEY = False
 # 下载延迟，别把别人人站点拖垮了，慢点
-DOWNLOAD_DELAY = 0.001
+DOWNLOAD_DELAY = 0.005
 # 爬虫并发数，默认是 16
 CONCURRENT_REQUESTS = 2048
 # 指定用来处理数据的 Pipeline 类，后面的数字代表执行顺序,取值范围是  0-1000 range.

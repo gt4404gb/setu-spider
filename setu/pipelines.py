@@ -29,6 +29,6 @@ class SetuPipeline(ImagesPipeline):
         print(item['title'] + str(i) +"." + request.url.split('/')[-1].split('.')[-1])
         #下载，item['tag']是文件夹路径，image_name是文件名
         down_file_name = u'/{0}/{1}'.format(item['tag'], image_name)
-        print("开始下载")
+        #print("开始下载")
         return down_file_name
 

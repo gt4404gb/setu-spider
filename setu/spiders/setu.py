@@ -6,14 +6,14 @@ import re
 from ..items import SetuItem #..代表上一级
 from scrapy_splash import SplashRequest
 
-class DmozSpider(CrawlSpider):
+class SetuSpider(CrawlSpider):
     #定义爬虫名
     name = "setu"
      #搜索的域名范围，也就是爬虫的约束区域，规定爬虫只爬取这个域名下的网页
     allowed_domains = ["m4ex.com","m4ex.net"]
     #开始页面
     start_urls = ['http://m4ex.com/fantasy/devil/succubus_devil50']
-    print(start_urls)
+    #print(start_urls)
 
     # 设置爬虫的请求头，防止爬取失败
     headers = {
@@ -23,7 +23,7 @@ class DmozSpider(CrawlSpider):
 
     rules = (
         # 提取匹配 allow正则匹配的链接，并使用spider的parse2方法进行分析
-        Rule(LinkExtractor(allow=('/fantasy/devil/succubus_devil50', )), callback='parse2',follow=True),
+        Rule(LinkExtractor(allow=('/.*?/.*?', )), callback='parse2',follow=True),
     )
 
     def parse2(self, response):
