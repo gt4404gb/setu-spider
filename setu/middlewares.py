@@ -101,3 +101,8 @@ class SetuDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+class ProxyMiddleware(object):
+    def process_request(self, request, spider):
+        #修改此处，设置为自己的代理
+        request.meta['proxy'] = "http://127.0.0.1:1087"

@@ -19,6 +19,8 @@ NEWSPIDER_MODULE = 'setu.spiders'
 # Obey robots.txt rules
 #SPLASH_URL = 'http://127.0.0.1:8050'
 DOWNLOADER_MIDDLEWARES = {
+    #如果要设置代理，请把下一行注释取消，并修改middelewwares.py中最后一行的代理设置
+    #'setu.middlewares.ProxyMiddleware': 100,
     'scrapy_splash.SplashCookiesMiddleware': 723,
     'scrapy_splash.SplashMiddleware': 725,
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
@@ -109,4 +111,4 @@ IMAGES_URLS_FIELD ="image_urls"
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-LOG_LEVEL = 'ERROR'
+LOG_LEVEL = 'DEBUG'

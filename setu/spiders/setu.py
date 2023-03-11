@@ -23,7 +23,7 @@ class SetuSpider(CrawlSpider):
 
     rules = (
         # 提取匹配 allow正则匹配的链接，并使用spider的parse2方法进行分析
-        Rule(LinkExtractor(allow=('/.*?/[a-z]+.*?[0-9]+', )), callback='parse2',follow=True),
+        Rule(LinkExtractor(allow=('/.+/[a-z]+.+?[0-9]+', )), callback='parse2',follow=True),
     )
 
     def parse2(self, response):
@@ -34,6 +34,5 @@ class SetuSpider(CrawlSpider):
         item['tag'] = response.xpath('//a[@rel="category tag"]//text()').extract_first()
         item['title'] = response.xpath('//h1[@class="entry-title"]//text()').extract_first()
         yield item
-        print("返回item成功")
-        #这里好像写错了，最后这个yield去掉应该也可以
+        #print("返回item成功")
         yield scrapy.Request(response.url, callback=self.parse)

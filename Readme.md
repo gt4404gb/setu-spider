@@ -7,8 +7,10 @@ pip install -r requirements.txt
 
 2、设置settings.py中的第42行修改IMAGES_STORE的值，修改为你希望保存图片的路径
 
+3、如果要指定代理，需要删除settings.py中第23行中的#，启用ProxyMiddleware
+然后修改pipelines.py最后一行为自己的代理
 
-3、IDE中运行main.py或者
+4、IDE中运行main.py或者
 命令行执行python main.py
 或者在文件目录下执行scrapy crawl setu
 

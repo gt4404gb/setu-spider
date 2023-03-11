@@ -28,6 +28,9 @@ class SetuPipeline(ImagesPipeline):
         image_name = item['title'] + str(i) +"." + request.url.split('/')[-1].split('.')[-1]
         print("标题："+item['title'])
         print(item['title'] + str(i) +"." + request.url.split('/')[-1].split('.')[-1])
+        #反特殊字符
+        item['tag'] = item['tag'].replace('！','!').replace('『','(').replace('』',')').replace('\\','/')
+        image_name = image_name.replace('！','!').replace('『','(').replace('』',')')
         #下载，item['tag']是文件夹路径，image_name是文件名
         down_file_name = u'/{0}/{1}'.format(item['tag'], image_name)
         #print("开始下载")
